@@ -1,0 +1,43 @@
+<html>
+    <style>
+        h1 {
+           color: green;
+        }
+        .header--div{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn{
+            background-color: cadetblue;
+            border-radius: 40px;
+            width: 100px;
+            height: 40px;
+            margin: 10px 40px;
+        }
+
+        .register--and--login{
+            display: flex;
+            justify-content: center;
+        }
+
+    </style>
+
+    <div class="header--div">
+        <h1> This is the homepage </h1>
+    </div>
+
+    <div class="register--and--login">
+        <button class="btn">
+            <a href="{% url 'reg' %}"> Register here </a>
+        </button>
+
+        <button class="btn">
+            <a href="{% url 'my-login' %}"> Login here </a>
+        </button>
+    </div>
+
+    <br> <br>
+
+</html>

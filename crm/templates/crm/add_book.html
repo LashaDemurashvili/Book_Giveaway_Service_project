@@ -1,0 +1,63 @@
+<!-- add_book.html -->
+
+<form method="post">
+    {% csrf_token %}
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" required><br>
+
+    <label for="authors">Authors:</label>
+    <select id="authors" name="authors" multiple>
+        {% for author in authors %}
+            <option value="{{ author.id }}">{{ author.name }}</option>
+        {% endfor %}
+    </select><br>
+
+    <label for="genres">Genres:</label>
+    <select id="genres" name="genres" multiple>
+        {% for genre in genres %}
+            <option value="{{ genre.id }}">{{ genre.name }}</option>
+        {% endfor %}
+    </select><br>
+
+    <label for="condition">Condition:</label>
+    <select id="condition" name="condition">
+        {% for cond in conditions %}
+            <option value="{{ cond.id }}">{{ cond.name }}</option>
+        {% endfor %}
+    </select><br>
+
+    <input type="submit" value="Add Book">
+</form>
+
+
+
+{#<a href="http://127.0.0.1:8000/dashboard">Back to Dashboard</a>#}
+{#<br>#}
+{#<br>#}
+{#<br>#}
+{##}
+{#<form method="post">#}
+{#    {% csrf_token %}#}
+{#    <label for="title">Title:</label>#}
+{#    <input type="text" id="title" name="title" required><br>#}
+{##}
+{#    <br>#}
+{##}
+{#    <label for="authors">Authors:</label>#}
+{#    <input type="text" id="authors" name="authors" required><br>#}
+{##}
+{#    <br>#}
+{##}
+{#    <label for="genres">genres:</label>#}
+{#    <input type="text" id="genres" name="genres" required><br>#}
+{##}
+{#    <br>#}
+{##}
+{#    <label for="condition">Condition:</label>#}
+{#    <input type="text" id="condition" name="condition" required><br>#}
+{##}
+{#    <br>#}
+{#    <br>#}
+{#    <input type="submit" value="Add Book">#}
+{#</form>#}
+

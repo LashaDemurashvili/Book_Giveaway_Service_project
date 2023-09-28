@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+{% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+<body>
+    <div class="container2">
+        <h1>Update Books</h1>
+        <form action="{% url 'uprec' book.id %}" method="post">
+            {% csrf_token %}
+
+            <label for="">Book title</label><br><br>
+            <input type="text" name="book-title" value="{{book.title}}"><br><br>
+
+            <label for="">Authors</label><br><br>
+            <input type="text" name="authors" value="{{book.authors}}"><br><br>
+
+            <label for="">Genres</label><br><br>
+            <input type="text" name="genres" value="{{book.genres}}"><br><br>
+
+            <label for="">Condition</label><br><br>
+            <input type="text" name="condition" value="{{book.condition}}"><br><br>
+
+            <label for="">Book location</label><br><br>
+            <input type="text" name="location" value="{{book.location}}"><br><br>
+
+
+            <button type="submit" id="new1">Update</button>
+        </form>
+
+    </div>
+</body>
+
+</html>
