@@ -10,7 +10,8 @@ from django.contrib.auth import authenticate, login, logout
 
 
 def homepage(request):
-    return render(request, 'crm/index.html')
+    # return render(request, 'crm/index.html')
+    return redirect('/')
 
 
 def reg(request):

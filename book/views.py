@@ -1,6 +1,8 @@
 from django.shortcuts import redirect, render
 from .models import Books
 
+from django.views.generic import ListView, DetailView
+
 
 def index(request):
     books = Books.objects.all()
@@ -59,3 +61,6 @@ def uprec(request, id):
     return redirect("/dash")
 
 
+def search(request):
+    books = Books.objects.all()
+    return render(request, 'search.html', {'books': books})

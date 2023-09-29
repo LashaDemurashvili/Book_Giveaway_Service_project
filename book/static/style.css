@@ -129,6 +129,7 @@ h1 {
 }
 
 .container #new3 {
+    width: 200px;
     padding: 8px;
     background-color: rgb(27, 24, 199);
     color: white;
@@ -136,3 +137,17 @@ h1 {
     border-color: #04AA6D;
 }
 
+#new3:active{
+    background-color: rgb(74, 71, 217);
+}
+
+.add--book{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.searched--title{
+    display: flex;
+    justify-content: center;
+}

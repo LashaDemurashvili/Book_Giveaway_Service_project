@@ -6,9 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
 </head>
-{% load static %}
-<link rel="stylesheet" href="{% static 'style.css' %}">
 
 <style>
     .container {
@@ -25,13 +27,15 @@
         <a href="http://127.0.0.1:8000/" > <h2>Go to home page</h2> </a>
     </div>
 
-    <div class="search--bar">
-        <input type="text" id="search--bar" placeholder="type here for search">
-        <button type="submit" id="search--submit--btn">Submit</button>
-    </div>
+<!--    <div class="search&#45;&#45;bar">-->
+<!--        <form action="{% url 'search' %}" method="get">-->
+<!--            <input type="text" name="q" id="search&#45;&#45;bar" placeholder="type here for search">-->
+<!--            <button type="submit" id="search&#45;&#45;submit&#45;&#45;btn">Search</button>-->
+<!--        </form>-->
+<!--    </div>-->
 
     <div class="header--text">
-        <h1>Books</h1>
+        <h1>My Books</h1>
         <h1>My Page</h1>
     </div>
     <table id="books" border="1">
@@ -40,8 +44,8 @@
         <th id="title--filter">Book title</th>
         <th>Book authors</th>
         <th>Book genres</th>
-        <th>Book conditions</th>
-        <th>Book Location</th>
+        <th>Book condition</th>
+        <th>Book location</th>
         <th>Owner</th>
 
         <th colspan="2" id="mid">Action</th>
@@ -70,9 +74,11 @@
         {% endfor %}
     </table>
     <br><br>
-    <a href="{% url 'add' %}">
+    <div class="add--book">
+            <a href="{% url 'add' %}">
         <button id="new3">Add Book</button>
     </a>
+    </div>
 </div>
 
 <script>
