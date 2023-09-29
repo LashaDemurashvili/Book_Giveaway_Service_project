@@ -13,7 +13,7 @@
 
 <body>
     <div class="header--div">
-        <h1> This is the homepage </h1>
+        <h1> This is the home page </h1>
     </div>
         <div class="register--and--login">
             <a href="{% url 'reg' %}" class="btn"> Register here </a>
@@ -25,18 +25,33 @@
     <div class="container">
 
         <!--search bar-->
-        <div class="search--bar">
+    <div class="search--bar">
         <form action="{% url 'search' %}" method="get">
+            {% csrf_token %}
+
             <input type="text" name="q" class="search--bar" placeholder="type here for search">
             <button type="submit" class="search--submit--btn">Search</button>
         </form>
-        </div>
+    </div>
 
         <div class="header--text">
             <h1>All Books</h1>
-            <h1>Home Page</h1>
+
+<!--            we need to detect if user login successfully, and then show her dashboard on homepage-->
+<!--            otherwise go user to login page -->
+<!--            but at this moment this not working-->
+            {% if 'userlogin' == 'userlogin' %}
+                <a href="{% url 'dash' %}" >
+                    <h2>My Dashboard</h2>
+                </a>
+            {% else %}
+                <a href="{% url 'my-login' %}" >
+                    <h2>My Dashboard</h2>
+                </a>
+            {% endif %}
         </div>
 
+<!--        table-->
         <table id="books" border="1">
             <thead>
                 <th>Id</th>
@@ -49,7 +64,7 @@
 
             </thead>
             {% for x in books %}
-            <tr>
+            <tr class="table--rows">
                 <td>{{x.id}}</td>
                 <td>{{x.title}}</td>
                 <td>{{x.authors}}</td>

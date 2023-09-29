@@ -15,12 +15,12 @@ class Migration(migrations.Migration):
             name='Books',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=100)),
-                ('authors', models.CharField(max_length=100)),
-                ('genres', models.CharField(max_length=100)),
-                ('condition', models.CharField(max_length=100)),
-                ('location', models.CharField(max_length=100)),
-                ('owner', models.CharField(max_length=100)),
+                ('title', models.CharField(max_length=50)),
+                ('authors', models.CharField(max_length=50)),
+                ('genres', models.CharField(max_length=50)),
+                ('condition', models.CharField(max_length=50)),
+                ('location', models.CharField(max_length=50)),
+                ('owner', models.CharField(max_length=50)),
             ],
         ),
     ]

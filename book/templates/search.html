@@ -8,23 +8,26 @@
 <body>
 
 <div class="container">
-
-
     <div class="searched--title">
         <h1>You searched for...</h1>
     </div>
-    <br><br><br><br>
 
+    <div class="home--link">
+        <a href="http://127.0.0.1:8000/" > <h2>Back to home page</h2> </a>
+    </div>
+    <br>
 <!--    search-->
     <div class="search--bar">
         <form action="{% url 'search' %}" method="get">
+            {% csrf_token %}
+
             <input type="text" name="q" class="search--bar" placeholder="type here for search">
             <button type="submit" class="search--submit--btn">Search</button>
         </form>
     </div>
 
         <div class="header--text">
-            <h1>Filtered Books</h1>
+            <h1>Filtered Books  </h1>
         </div>
 
     <!--    table-->
@@ -40,7 +43,7 @@
 
         </thead>
         {% for x in books %}
-        <tr>
+        <tr class="table--rows">
             <td>{{x.id}}</td>
             <td>{{x.title}}</td>
             <td>{{x.authors}}</td>
@@ -57,31 +60,3 @@
 </body>
 </html>
 
-
-<!--{% block content %}-->
-
-<!--    <table id="books" border="1">-->
-<!--            <thead>-->
-<!--                <th>Id</th>-->
-<!--                <th>Book title</th>-->
-<!--                <th>Book authors</th>-->
-<!--                <th>Book genres</th>-->
-<!--                <th>Book condition</th>-->
-<!--                <th>Book location</th>-->
-<!--                <th>Owner</th>-->
-
-<!--            </thead>-->
-<!--            {% for x in books %}-->
-<!--            <tr>-->
-<!--                <td>{{x.id}}</td>-->
-<!--                <td>{{x.title}}</td>-->
-<!--                <td>{{x.authors}}</td>-->
-<!--                <td>{{x.genres}}</td>-->
-<!--                <td>{{x.condition}}</td>-->
-<!--                <td>{{x.location}}</td>-->
-<!--                <td>{{x.owner}}</td>-->
-<!--            </tr>-->
-<!--            {% endfor %}-->
-<!--        </table>-->
-
-<!--{% endblock %}-->

@@ -44,11 +44,16 @@
     width: 100%;
 }
 
-#books td,
-#books th {
+#books td, #books th {
     border: 1px solid rgb(17, 4, 4);
     padding: 6px;
 }
+
+
+#books tr {
+    height: 50px;
+}
+
 
 #books tr:nth-child(even) {
     background-color: #f2f2f2;
@@ -150,4 +155,13 @@ h1 {
 .searched--title{
     display: flex;
     justify-content: center;
+}
+
+.search--bar{
+    height: 35px;
+}
+
+.search--bar button {
+    width: 70px;
+    height: 40px;
 }

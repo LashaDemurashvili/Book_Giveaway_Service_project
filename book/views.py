@@ -1,5 +1,6 @@
 from django.shortcuts import redirect, render
 from .models import Books
+from django.db.models import Q
 
 from django.views.generic import ListView, DetailView
 
@@ -18,6 +19,7 @@ def add(request):
     return render(request, 'add.html')
 
 
+# create new book
 def addrec(request):
     x = request.POST['book-title']
     y = request.POST['authors']
@@ -27,6 +29,7 @@ def addrec(request):
     o = request.POST['owner']
     book = Books(title=x, authors=y, genres=z, condition=k, location=l, owner=o)
 
+    # save db
     book.save()
     return redirect("/dash")
 
@@ -61,6 +64,17 @@ def uprec(request, id):
     return redirect("/dash")
 
 
-def search(request):
-    books = Books.objects.all()
-    return render(request, 'search.html', {'books': books})
+class Search(ListView):
+    model = Books
+    template_name = 'search.html'
+    context_object_name = 'books'
+
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+        # return Books.objects.filter(title__icontains=query)
+
+        # search with some arguments
+        return Books.objects.filter(Q(title__icontains=query) | Q(authors__icontains=query) |
+                                    Q(genres__icontains=query) | Q(condition__icontains=query) |
+                                    Q(location__icontains=query) | Q(owner__icontains=query)
+                                    )
