@@ -5,21 +5,24 @@ from django.db.models import Q
 from django.views.generic import ListView, DetailView
 
 
+# home page
 def index(request):
     books = Books.objects.all()
     return render(request, 'index.html', {'books': books})
 
 
+# dashboard for user
 def my_dashboard(request):
     books = Books.objects.all()
     return render(request, 'dash.html', {'books': books})
 
 
+# render add.html file
 def add(request):
     return render(request, 'add.html')
 
 
-# create new book
+# create new book, based on new data
 def addrec(request):
     x = request.POST['book-title']
     y = request.POST['authors']
@@ -36,17 +39,20 @@ def addrec(request):
     return redirect("/dash")
 
 
+# delete book, we need - id, for existing book
 def delete(request, id):
     book = Books.objects.get(id=id)
     book.delete()
     return redirect("/dash")
 
 
+# render update.html file, and create 'book' variable, and assign only this value which match specific - id
 def update(request, id):
     book = Books.objects.get(id=id)
     return render(request, 'update.html', {'book': book})
 
 
+# update existing book, using book - id
 def uprec(request, id):
     x = request.POST['book-title']
     y = request.POST['authors']
@@ -54,8 +60,6 @@ def uprec(request, id):
     k = request.POST['condition']
     l = request.POST['location']
     p = request.POST['phone']
-
-
 
     book = Books.objects.get(id=id)
 
@@ -66,10 +70,12 @@ def uprec(request, id):
     book.location = l
     book.phone = p
 
+    # save changes in database
     book.save()
     return redirect("/dash")
 
 
+# search, using various parameter, except phone number
 class Search(ListView):
     model = Books
     template_name = 'search.html'
