@@ -21,6 +21,7 @@ class Migration(migrations.Migration):
                 ('condition', models.CharField(max_length=50)),
                 ('location', models.CharField(max_length=50)),
                 ('owner', models.CharField(max_length=50)),
+                ('phone', models.IntegerField()),
             ],
         ),
     ]

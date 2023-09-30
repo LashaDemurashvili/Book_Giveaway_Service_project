@@ -27,7 +27,9 @@ def addrec(request):
     k = request.POST['condition']
     l = request.POST['location']
     o = request.POST['owner']
-    book = Books(title=x, authors=y, genres=z, condition=k, location=l, owner=o)
+    p = request.POST['phone']
+
+    book = Books(title=x, authors=y, genres=z, condition=k, location=l, owner=o, phone=p)
 
     # save db
     book.save()
@@ -51,6 +53,9 @@ def uprec(request, id):
     z = request.POST['genres']
     k = request.POST['condition']
     l = request.POST['location']
+    p = request.POST['phone']
+
+
 
     book = Books.objects.get(id=id)
 
@@ -59,6 +64,7 @@ def uprec(request, id):
     book.genres = z
     book.condition = k
     book.location = l
+    book.phone = p
 
     book.save()
     return redirect("/dash")
@@ -71,7 +77,6 @@ class Search(ListView):
 
     def get_queryset(self):
         query = self.request.GET.get('q')
-        # return Books.objects.filter(title__icontains=query)
 
         # search with some arguments
         return Books.objects.filter(Q(title__icontains=query) | Q(authors__icontains=query) |
