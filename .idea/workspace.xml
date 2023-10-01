@@ -40,12 +40,11 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/lasha/ttt/Book_Giveaway_Service_project",
+    "last_opened_file_path": "/home/lasha/Book_Giveaway_Service_project/book",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "vcs.Git",
     "vue.rearranger.settings.migration": "true"
   },
@@ -91,12 +90,6 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
-    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
-      <deployment type="docker-compose.yml">
-        <settings />
-      </deployment>
-      <method v="2" />
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -110,8 +103,7 @@
       <workItem from="1695903214667" duration="292000" />
       <workItem from="1695903705508" duration="11555000" />
       <workItem from="1695984505265" duration="7119000" />
-      <workItem from="1696066005493" duration="17530000" />
-      <workItem from="1696148526036" duration="4223000" />
+      <workItem from="1696066005493" duration="5031000" />
     </task>
     <task id="LOCAL-00001" summary="update project">
       <option name="closed" value="true" />
@@ -153,31 +145,7 @@
       <option name="project" value="LOCAL" />
       <updated>1695994798679</updated>
     </task>
-    <task id="LOCAL-00006" summary="update project">
-      <option name="closed" value="true" />
-      <created>1696073337140</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1696073337140</updated>
-    </task>
-    <task id="LOCAL-00007" summary="update project, implement docker files">
-      <option name="closed" value="true" />
-      <created>1696085211879</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1696085211879</updated>
-    </task>
-    <task id="LOCAL-00008" summary="update files, requirement.txt">
-      <option name="closed" value="true" />
-      <created>1696086452897</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1696086452897</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,11 +163,9 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="update project" />
     <MESSAGE value="update project, search_1" />
     <MESSAGE value="update project, search_2" />
-    <MESSAGE value="update project" />
-    <MESSAGE value="update project, implement docker files" />
-    <MESSAGE value="update files, requirement.txt" />
-    <option name="LAST_COMMIT_MESSAGE" value="update files, requirement.txt" />
+    <option name="LAST_COMMIT_MESSAGE" value="update project, search_2" />
   </component>
 </project>
